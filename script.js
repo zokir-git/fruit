@@ -1,29 +1,31 @@
 let ul = document.getElementById("produc__list");
 
 let arr = [];
+
 function addFruit() {
-  let productName = document.getElementById("productName").value;
+  let productName = document.getElementById("productName");
   let fixedPrice = document.getElementById("price").value;
   let unitType = document.getElementById("unity").value;
 
-  if (!productName || !fixedPrice || !unitType) {
+  if (!productName.value || !fixedPrice || !unitType) {
     alert("Please select a product name, price and unit type");
     return;
   }
 
   arr.push({
-    name: productName,
+    name: productName.value,
     price: fixedPrice,
     unit: unitType,
   });
 
   displayFruits();
-  console.log(arr);
+
+  productName.value = "";
 }
 
 function displayFruits() {
   let lis = "";
-  arr.forEach((fruit) => {
+  arr.forEach((fruit, index) => {
     lis += `
         <li class="item__box">
           <span class="item__ditails">
@@ -33,10 +35,32 @@ function displayFruits() {
             <span>${fruit.unit} </span> 
           </span>
 
-          <button class="delele">delete</button>
+          <button class="delele" onclick="deleteFruit(${index})">delete</button>
         </li>
         `;
   });
 
   ul.innerHTML = lis;
+
+  let amount_box = document.getElementById("amoun_box");
+  if (arr.length > 0) {
+    amount_box.innerHTML = `<div id="amount">${arr.length}</div>`;
+  } else {
+    amount_box.innerHTML = "";
+  }
+}
+
+function deleteFruit(index) {
+  arr.splice(index, 1);
+  displayFruits();
+}
+
+function filterItem(x) {
+  if (x == "all") {
+    let array = arr.filter((prices) => {
+      return prices.price <= 15;
+    });
+
+    console.log(array);
+  }
 }

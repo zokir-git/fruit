@@ -26,19 +26,30 @@
         </select>
 
         <button onclick="addFruit()">add to list</button>
-      </form>
 
-      <ul id="produc__list">
-        <!-- <li class="item__box">
+        <div class="filter__box">
+          <button onclick="filterItem('all')">All</button>
+          <button onclick="filterItem('expencive')">Expencive</button>
+          <button onclick="filterItem('cheap')">Cheap</button>
+        </div>
+      </form>
+      <div class="list__box">
+        <div id="amoun_box">
+          <!-- <div id="amount"></div> -->
+        </div>
+
+        <ul id="produc__list">
+          <!-- <li class="item__box">
           <span class="item__ditails">
             <span class="item__name">Product</span>
             <span class="symbol">$ </span>
             <span class="final__price">3</span>
           </span>
 
-          <button class="delele">delete</button>
+          <button id="delele" oncl>delete</button>
         </li> -->
-      </ul>
+        </ul>
+      </div>
     </div>
 
     <script src="./script.js"></script>

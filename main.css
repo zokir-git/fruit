@@ -33,12 +33,30 @@ button {
   background-color: #fff;
   font-weight: 600;
   border-radius: 0.2rem;
+
+  cursor: pointer;
 }
 .fruid__box {
-  width: 20%;
-  margin: 150px auto;
+  width: 70%;
+  margin: 50px auto;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 2fr 5fr;
 }
 
+/* form {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.list__box{
+  grid-column-start: 3;
+  grid-column-end: 10;
+} */
+/* form{
+  width: 35%;
+  margin: 0 auto;
+} */
 input {
   border: none;
   padding: 0.5rem 1rem;
@@ -57,7 +75,18 @@ ul {
   list-style: none;
   margin-top: 2rem;
 }
-
+#amount {
+  border-radius: 0.3rem;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background-color: #fffccc;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #bc7171;
+  position: absolute;
+  top: 17px;
+  left: 310px;
+}
 .item__box {
   background-color: #3f979b;
   padding: 0.4rem 0.4rem;
@@ -73,3 +102,12 @@ ul {
 .item__name {
   margin-right: 1rem;
 }
+
+.filter__box {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* .filter__box div {
+} */
